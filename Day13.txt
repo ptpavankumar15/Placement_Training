@@ -1,0 +1,210 @@
+Constructor
+>If a class name and method name are same the method is called as constructor
+>Generally Constructor should be public
+>Don't use any return type to a constructor
+>Whenever we create object to a class a constructor invoke automatically
+>we no need to call a constructor.
+>If you try to call it return error.
+>Types of Constructor:
+1.default 2.Parameterized 3.copyconstructor 4.private 5.construtor chaining
+
+-------------------------
+Construtor chaining -> 
+> If aconstructor calls another constructor, that is constructor chaining.
+>have to use this method within  constructor
+>this method used to call another constructor.
+>Till java version 19 this method should as a first statement of aconstructor.
+>Java 25 introduces flexible constructor Bodies. Can use this method anywhere within constructor. 
+
+---------------------------------------------------------------------------------------
+class emp{
+    public Emp(){
+        System.out.println("From default constructor");
+    }
+    public Emp(String Ename){
+        System.out.println("From parameterized constructor"+Ename);
+    }
+}
+
+class nothing{
+    public static void main(String args[]){
+        Emp e=new emp();
+        e=new Emp("XYZ");
+    }
+}
+------------------------------------------------------------------------------------------
+                    	Default    	Private		Protected 		Public
+Same class          	Yes		yes		yes		        yes
+Same Package subclass	Yes		no		yes			yes
+--------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+class emp{
+    public Emp(){
+        System.out.println("From default constructor");
+    }
+    public Emp(String Ename){
+        System.out.println("From parameterized constructor"+Ename);
+    }
+}
+
+class nothing{
+    public static void main(String args[]){
+        Emp e=new emp();
+        e=new Emp("XYZ");
+    }
+}
+------------------------------------------------------------------------------------------
+class A{
+int def1;
+private int pri1;
+protected intpro1;
+public int pub1;
+
+void displayA(){
+System.out.println("\t\tFrom Class A: ");
+System.out.println("default: "+def1);
+System.out.println("private: "+pri1);
+System.out.println("protected: "+pro1);
+System.out.println("public: "+ pub1);
+}
+
+class B extends A{
+void displayB();
+}
+class Main{
+public static void main(String args[]){
+A a=new A();
+a.displayA();
+}
+}
+--------------------------------------------------------------------------------------------
+leave page
+---------------------------------------------------------------------------------------------
+
+class C{
+void display(){
+A ob1=new A();
+system.out.println("\t\t From Class C:");
+system.out.println("default: "+obj1.def1);
+system.out.println("private: "+obj1.pri1);
+system.out.println("protected: "+obj1.pro1);
+system.out.println("public: "+obj1.pub1);
+}}
+
+-------------------------------------------------------------------------------------------
+package1;
+
+class D{
+int def2;
+private int pri2;
+protected int pro2;
+public int pub2;
+}
+
+// To create a new package:
+//save this file named at the folder of pack1. The pack1 folder and main.java file should be in same path.
+
+--------------------------------------------------------------------------------------------
+
+
+class F{
+void display(){
+D obj2 = new D();
+System.out.println("\t\tFrom Class F: ");
+System.out.pritnln("default: " + obj2.def2);
+System.out.pritnln("private: " + obj2.pri2);
+System.out.pritnln("protected: " + obj2.pro2);
+System.out.pritnln("public: " + obj2.pub2);
+
+}
+
+-----------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+public class Main {
+
+    static int f1 = 1, f2 = 1;
+    static int count = 0;
+
+    static int num = 2;
+
+    // Returns next Fibonacci number
+    static int fibonacci() {
+        if (count == 0 || count == 1) {
+            count++;
+            return 1;
+        }
+
+        int f3 = f1 + f2;
+        f1 = f2;
+        f2 = f3;
+        return f3;
+    }
+
+    // Returns next Prime number
+    static int prime() {
+        while (true) {
+            boolean isPrime = true;
+
+            for (int i = 2; i*i <= num; i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                int temp = num;
+                num++;
+                return temp;
+            }
+
+            num++;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+
+            if (i % 2 != 0) {
+                System.out.print(fibonacci() + " ");
+            } else {
+                System.out.print(prime() + " ");
+            }
+
+        }
+
+        sc.close();
+    }
+}
+---------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

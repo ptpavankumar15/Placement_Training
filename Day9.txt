@@ -1,0 +1,327 @@
+impoert java.util.Scanner;
+class EvenNumber{
+public static void main(String args[]){
+
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+
+int arr[]=new int[n];
+
+for(int i=0;i<n;i++){
+arr[i]=sc.nextInt();
+}
+
+for(int i=0;i<n;i++){
+if(arr[i]%2==0){
+System.out.println("Its a even Number");
+}
+else{
+System.out.println("Not a odd number");
+}
+
+}
+}
+----------------------------------------------------------------
+impoert java.util.Scanner;
+class EvenNumber{
+public static void main(String args[]){
+
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+
+int arr[]=new int[n];
+
+for(int i=0;i<n;i++){
+arr[i]=sc.nextInt();
+}
+
+int count=0;
+for(int i=0;i<n;i++){
+if(arr[i]%2==0){
+
+count++;
+}
+}
+System.out.println(count);
+}
+---------------------------------------------------------------------
+import java.util.Scanner;
+class ReverseArray{
+public static void main(String args[]){
+
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+
+int arr[]=new int[n];
+
+for(int i=0;i<n;i++){
+arr[i]=sc.nextInt();
+}
+
+for(int i=n;i>=0;i--){
+System.out.println(i);
+}
+
+for(int i=0;i<n/2;i++){
+int temp=arr[i];
+arr[i]=arr[n-i-1];
+arr[n-i-1]=temp;
+}
+
+System.out.println("Reverse Array:- "+ Arrays.toString(arr));
+
+}
+-----------------------------------------------------------------------
+1a,2c,3b,4b,5c,6b,7b,8c,9c,10b,11c,12b,13b,14b,15c,16b,17b,18a,19c,20c,21b,22b,23b,24c,25b
+--------------------------------------------------------------------
+8.count positive and negative numbers
+9.Count zero vlaues
+10.Find sum of even Numbers and sum of odd numbers
+11.Print alternate elements
+12.Print elements at even index and odd index;
+13.Frequency of given number
+14.Element exists are not 
+15.Find first occurrence of an element
+16.Remove duplicates
+17.Find duplicate elements
+20.common element between two arrays
+22.Insert an element
+-------------------------------------------------------------------------
+import java.util.*;
+class ReverseArray{
+public static void main(String args[]){
+
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+
+int arr[]=new int[n];
+
+for(int i=0;i<n;i++){
+arr[i]=sc.nextInt();
+}
+
+System.out.println("Even index");
+for(int k=0;k<n;k++){
+    System.out.println(arr[k]);
+    k++;
+}
+
+System.out.println("Odd index");
+for(int i=1;i<n;i++){
+    System.out.println(arr[i]);i++;
+}
+
+}
+}
+---------------------------------------------------------------------------
+import java.util.*;
+class ReverseArray{
+public static void main(String args[]){
+
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+
+int arr[]=new int[n];
+
+for(int i=0;i<n;i++){
+arr[i]=sc.nextInt();
+}
+
+int target=sc.nextInt();
+int freq=0;
+for(int i=0;i<n;i++){
+    if(arr[i]==target){
+        freq++;
+    }
+}
+
+System.out.println("count of"+target+" is "+freq);
+
+}
+}
+
+---------------------------------------------------------------------------
+import java.util.*;
+class ReverseArray{
+public static void main(String args[]){
+
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+
+int arr[]=new int[n];
+
+for(int i=0;i<n;i++){
+arr[i]=sc.nextInt();
+}
+
+int target=sc.nextInt();
+int index=-1;
+for(int i=0;i<n;i++){
+    if(arr[i]==target){
+        index=i;
+        break;
+    }
+}
+System.out.println("Index of "+target+" is "+index);
+
+}
+}
+-----------------------------------------------------------------------------
+import java.util.*;
+class ReverseArray{
+public static void main(String args[]){
+
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+
+int arr[]=new int[n];
+
+for(int i=0;i<n;i++){
+    arr[i]=sc.nextInt();
+}
+
+for(int i=0;i<n;i++){
+    int count=0;
+    for(int j=i;j<n;j++){
+        if(arr[i]==arr[j]){
+            count++;
+        }
+    }
+    if(count>1){
+        System.out.println("Duplicate element is "+arr[i]);
+    }
+}
+
+}
+}
+------------------------------------------------------------------------
+import java.util.*;
+class ReverseArray{
+public static void main(String args[]){
+
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+
+int arr[]=new int[n];
+
+for(int i=0;i<n;i++){
+    arr[i]=sc.nextInt();
+}
+
+for(int i=0;i<n;i++){
+    int count=0;
+    for(int j=i;j<n;j++){
+        if(arr[i]==arr[j]){
+            count++;
+        }
+    }
+    if(count==1){
+        System.out.println("Unique element is "+arr[i]);
+    }
+}
+
+}
+}
+------------------------------------------------------------------------------------
+20.
+import java.util.*;
+class ReverseArray{
+public static void main(String args[]){
+
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();
+
+int arr1[]=new int[n];
+
+for(int i=0;i<n;i++){
+    arr1[i]=sc.nextInt();
+}
+
+int arr2[]=new int[n];
+
+for(int i=0;i<n;i++){
+    arr2[i]=sc.nextInt();
+}
+
+for(int i=0;i<n;i++){
+    int count=0;
+    for(int j=0;j<n;j++){
+        if(arr1[i]==arr2[j]){
+            count++;
+        } 
+    }
+    if(count==1){
+        System.out.println("Unique element is "+arr1[i]);
+    }
+}
+
+}
+}
+----------------------------------------------------------------------------
+Data Structure
+-> Data manipulations are called datastructure
+handle data by sorting, searching, 
+
+two types linear and nonlinear
+linear-> two types -> static and dynamic
+
+static -> arrays
+Ist DS concept in 1993, 
+java in 1995
+
+linked list-. single, doubly, circular 
+
+
+-------------------------------------------------------------------
+import java.util.Scanner;
+int n=arr.length;
+for(int j=1;j<n;j++){
+int key=arr[i];
+int j=j-1;
+while(i>-1) &&(arr[i]>key)){
+arr[i+1]=arr[i];
+i--;
+}
+arr[i+1]=key;
+}
+
+int arr[]=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

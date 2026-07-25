@@ -1,0 +1,368 @@
+1. Factorial Value
+ 
+import java.util.Scanner;
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+Scanner sc=new Scanner(System.in);
+int no=sc.nextInt();
+int fact=1;
+for(int i=1;i<=no;i++)
+{
+    fact=fact*i;
+}
+System.out.println("Factorial Value is : " + fact);
+	}
+}
+--------------------------
+2. Sum of Natural Numbers
+import java.util.Scanner;
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+Scanner sc=new Scanner(System.in);
+int no=sc.nextInt();
+int sum=0;
+for(int i=1;i<=no;i++)
+{
+    sum=sum+i;;
+}
+System.out.println"Sum of Natural Number is : " + sum);
+	}
+}
+--------------------------
+3. Fibnoacci Series
+
+import java.util.Scanner;
+class Codechef
+{
+public static void main (String[] args) throws java.lang.Exception
+{
+Scanner sc=new Scanner(System.in);
+int no=sc.nextInt();
+int f1=0,f2=1,f3=0;
+for(int i=1;i<=no;i++)
+{
+     f3=f1+f2;
+     System.out.print(f3 + " ");
+     f1=f2;
+     f2=f3;
+} // i++
+}
+}
+----------------------------
+4. Multiply of Digits
+input : 1234
+output : 24
+
+Constraints : Convert negative input as positive
+
+Solution:
+import java.util.Scanner;
+class Codechef
+{
+public static void main (String[] args) throws java.lang.Exception
+{
+Scanner sc=new Scanner(System.in);
+int no=sc.nextInt();
+int num=Math.abs(no);
+int sum=1;
+while(no>0)
+{
+sum=sum*(no%10);
+no=no/10;
+}
+System.out.println("Product is : " + sum);
+}
+}
+----------------------- 
+5. Prime No
+
+import java.util.Scanner;
+class Codechef
+{
+public static void main (String[] args) throws java.lang.Exception
+{
+Scanner sc=new Scanner(System.in);
+int no=sc.nextInt();
+int flag=0;
+for(int i=2;i<no;i++)
+{
+if(no%i ==0)
+{
+	flag=1;
+                  break;
+}
+else
+{
+	flag=0;
+}
+}
+if(flag==0)
+System.out.println("Prime No ");
+else
+System.out.println("Not Prime No ");
+}
+}
+----------------------------------
+6. Armstrong No
+
+1 5 3 , 3 7 0 , 3 7 1 - Three digits armstrong number
+
+3 * 3 * 3 =   27
+5 * 5 * 5 = 125
+1 * 1 * 1 =     1
+            -------------
+                1 5 3
+            ---------------
+----------------------------------
+7. Armstrong No
+
+Ex : Print all armstrong numbers from 3 digits, 4 digits and five digits
+--------------------------------
+ import java.util.Scanner;
+
+class Codechef1 {
+    public static void main(String[] args) throws java.lang.Exception {
+
+        for (int no = 100; no < 100000; no++) {
+            int sum = 0, m= no;
+            String str = String.valueOf(no);
+
+            while (m> 0) {
+                int a= m% 10;
+                sum += (int) Math.pow(a, str.length());
+                m/= 10;
+            }
+
+            if (sum == no) {
+                System.out.println("Armstrong : " + no);
+            }
+        }
+    }
+}
+----------------------------------
+8. Perfect Number
+6 = 1 , 2 , 3  = 6
+28 = 1 + 2 + 4 + 7 + 14 = 28
+
+Sum of factor number (exclusive given number ) is same as given number.
+
+import java.util.Scanner;
+class Codechef
+{
+public static void main (String[] args) throws java.lang.Exception
+{
+Scanner sc=new Scanner(System.in);
+int no=sc.nextInt();
+int sum=0;
+for(int i=1;i<no;i++)
+{ 
+	if(no%i ==0)
+	sum=sum+i;
+}
+if(sum==no)
+System.out.println("Perfect No : " + no); 
+else
+System.out.println("Not Perfect No : " + no); 
+}
+} 
+----------------------------
+9. Arithmetic Sequence
+
+input: 2, 4, 20
+6, 10, 14 , 18
+
+import java.util.Scanner;
+class Codechef
+{
+public static void main (String[] args) throws java.lang.Exception
+{
+Scanner sc=new Scanner(System.in);
+System.out.print("Enter First term : "); 
+int ft=sc.nextInt();
+System.out.print("Enter Common diff : "); 
+int d=sc.nextInt();
+System.out.print("Enter No of Terms : "); 
+int no=sc.nextInt();
+int term=0;
+for(int i=1;i<no;i++)
+{
+term=ft+i*d; // Main logic
+System.out.print(term + " ");
+}
+}
+} 
+----------------------------
+10 . Print positive and negative square number of given range
+input: 5
+output:  -25 -16 -9 -4 -1 1 4 9 16 25
+----------------------------
+ 
+
+import java.util.Scanner;
+class Codechef
+{
+public static void main (String[] args) throws java.lang.Exception
+{
+Scanner sc=new Scanner(System.in); 
+ 
+System.out.print("Enter Nooo  : "); 
+int no=sc.nextInt();
+int term=0;
+for(int i=no;i>=-no;i--)
+{ 
+if(i>0)
+{ 
+System.out.print(-(i*i)+ " , ");
+}
+else
+{
+System.out.print ( i*i+ " ");
+}
+} 
+}
+} 
+
+-------------------------------------------
+Triangular Number
+Input:3    |     6
+output:    |     *
+  *        |    * *
+ * *       |   * * *
+
+public static void main (String[] args)
+	{
+	    
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+
+        int starsprinted=0;
+        
+        for(int i=0;starsprinted<n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=i && starsprinted<=n;j++){
+                System.out.print("* ");
+                starsprinted++;
+            }
+            System.out.println();
+        }
+
+	}
+-----------------------------------------------------------
+Padovan Sequence
+
+public static void main (String[] args)
+	{
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    
+	    int f1=1;
+	    int f2=1;
+	    int f3=1;
+	    
+	    for(int i=0;i<n;i++){
+	        int f4=f1+f2;
+	        System.out.print(f4+" ");
+	        f1=f2;
+	        f2=f3;
+	        f3=f4;
+	    }
+
+	}
+Sample Input
+10
+Your Output
+2 2 3 4 5 7 9 12 16 21 
+
+ int no=sc.nextInt();
+	    
+	    int p[] = new int [no];
+	    if(no>2){
+	        p[0]=1;p[1]=1;p[2]=1;
+	    }
+	    
+	    
+	    for(int i=3;i<no;i++){
+	        p[i]=p[i-2]+p[i-3];
+	    }
+	    
+	    for(int arr:p){
+	        System.out.print(arr+" ");
+	    }
+--------------------------------------------------
+14. Sterns Diatomic series
+
+input:even ->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

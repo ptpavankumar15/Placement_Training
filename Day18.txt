@@ -1,0 +1,155 @@
+TREE
+-------
+>Tree comes under non linear data structure
+>It support hierarchy model
+>Types of trees:
+1.Binary tree 
+2.Binary Search tree 
+3.AVL Tree 
+4.Red black tree 
+5.B+ tree
+6.B-tree
+7.complete tree 
+8.in complete tree
+---------------------------------------------------------------------------------------------------------
+What is a tree?
+
+Hierarchy:
+>Directories contain files and subdirectories.
+>Nested structure 
+
+Nonlinear Representation:
+>Linear repreeentation isn't suitable.
+>Need a data structure to handle nested relationships.
+
+Tree Data Structure:
+>Idea for hierarchical data
+>Root node represents the main directory
+>Each node can have chideren 
+
+Benefits of Tree Strucutre:
+>Mirrors the real-word directory setup.
+>Efficiently managesand navigates nested items.
+>simplifies operations like adding, removing and searching for files/folders
+
+--------------------------------------------------------------------------------------------------------
+Tree Terminology
+
+Sub tree:-
+>A portion of a tree, which can be viewed as a separate tree in itself is called a subtree.
+>A subtree can also contain just one node called the leaf node.
+         	/A\
+	-------/ | \-----
+	B	 C	D
+	|	 |	|
+    E  F  G  H   I     J  K 
+			  |
+  		        L   M
+
+Edge:- Alink from the parent to a child node is reffered to asa an edge.
+
+Siblings/brother:- It refers to the children of the same node.
+Nodes B,C and D are siblings of each other.
+Nodes E,F,G and H are siblings of each other.
+
+Internal node:- It refers to any node between the root and a leaf node.
+
+Level of a node:- 
+>It refers to the distane (in number of nodes) of a node from the root.
+>Root always lies at level 0.
+>As you move down the tree, the level increases by one.
+
+         	/A\                  ----------level 0
+	-------/ | \-----
+	B	 C	D            ----------level 1
+	|	 |	|
+    E  F  G  H   I     J  K          ----------level 2
+			  |
+  		        L   M        ----------level 3
+-----------------
+Strictly binary tree:-
+> A binary tree in which every node, except for the leaf nodes, has non-empty 
+left and right children.
+
+Full binary tree:-
+A binary tree of depth of that contains exactly nodes.
+
+Complete Binary tree:
+>A binary tree in which all levels, except 
+
+Linked representation of a binary tree:-
+It uses a linked list to implement a binary tree.
+>Each node in the linked representation holds the following information:
+  >data
+  >Reference to the left child
+  >Reference to the right child
+>If a node does not have a left child or a right child or both, the respective 
+left or right fields of that node point to NULL.
+
+Traversing a Binary tree:
+>You can implement various operations on a binary tree.
+>A common operation on a binary tree is traversal.
+>Traversal refers to the process of visiting all the nodes of a binary tree once.
+>there are three ways for traversing a binary tree:
+1.Inorder traversal
+2.Preorder traversal
+3.Postorder traversal
+
+Steps for traversing a tree in inorder sequence are as follows:
+1.traverse the left subtree
+2.Visit root
+3.Traverse the right subtree
+
+------------------------------------
+Preorder Traversal
+>Perform the post order traversal of the following tree:
+
+
+----------------------------------------------------------------------------------------------------
+
+
+Visit the starting vertex, v and insert it into a queue.
+Repeat step 3 until the queue becomes empty.
+Delete the front vertex from the queue, visit all its unvisited 
+adjacent vertices and insert them into the queue.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

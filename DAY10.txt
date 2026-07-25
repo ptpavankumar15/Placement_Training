@@ -1,0 +1,186 @@
+Bubble sort - swapping adjacent elements
+//9 8 6 1 7
+for(int i=0;i<n;i++){
+for(int j=1;j<n-i;j++){
+if(arr[j-1]>arr[j]){
+int temp=arr[j-1];
+arr[j-1]=arr[j];
+arr[j]=temp;
+}}}
+
+return arr;
+---------------------------------------------
+Selection sort
+// 9 8 6 1 7
+
+for(int i=0;i<n;i++){
+int minindex=i;
+for(int j=i+1;j<n;j++){
+if(arr[minindex] > arr[j]){
+int temp=arr
+
+-----------------------------------------------
+String is apredefind class. 
+java.lang package
+java.;ang.String(Version 1.0) - immutable(Cant chage in existing string)
+java.lang.StringBuilder (Version 1.5) - mutable
+java.lang.StringBuffer
+-----------------------------------------------
+All the above there clases are final calss.
+All three classes has toString() method
+Use below command to get info(available method, interface, calss type, static function, constatns, instance variable)
+>>javap java.lang.String
+>>javap java.lang.StringBuffer
+----------------------------------------------
+constructor -> if the class name and the method is same
+
+1.default 2.Parameterized
+-------------------------------------------------
+There are 9 constructor in updated java version 17
+only 4 constructor in string buffer
+public java.lang.StringBuffer();
+public java.land.StringBuffer(int);
+public java.lang.StringBuffer(java.lang.String);
+-------------------------------------------------
+
+public class main{
+public static void main(String[] args){
+String ename="Vijays Nagarajan";
+String company="Zoho";
+String dept="Java Developer";
+String email="viji@zoho.com";
+String password="Java@123";
+String msg="Welcome to java";
+String filename="Resume.pdf";
+
+//1.length()
+System.out.println("Length of name: "+ename.length());
+
+//2.trim()
+system.out.println("Before trim:"+str1+"-After trim:"+str1.trim());
+
+//3.toUpperCase()
+System.out.println(Name in Capital:"+ename.toUpperCase());
+
+4.toLowerCase()
+System.out.println("Character:"+ename.CharAt(3));
+
+System.out.pritnln("Character:"+ename.charAt(3));
+
+System.out.println("Substring :" +email.substring(3));
+
+//7.substring
+System.out.println(Substring II: " +email.substring(3,7));
+
+//8.contains
+System.out.println("Contains:" +masg.contains("Java"));
+
+//9.strtswith
+System.out.println("Department:"+dept.startsWith("ja"));
+
+//10.endswith
+System.out.println("department: "+dept.endsWith("er"));
+
+}}
+----------------------------------------------------
+public calss Main1{
+public static void main(String args[]){
+String uname="klu";
+String pass="123";
+
+---------------------------------------------
+public class Main1{
+public static void main(String args[]){
+String s1=new String("klu");
+String s2=new String("klu");
+String s3=s1;
+System.out.println(s1==s2);   //false
+System.out.println(s1==s3);   //true
+System.out.println(s1.equals(s2));  //true
+}}
+
+--------------------------------------------------
+12.equalsIgnoreclass
+
+sytem.out.println("Original:" +
+
+18.last indexof
+system.out.println("Last Index of:" + ename.lastIndexOf("a');  //14
+
+//19. Concat
+System.out.println("Concat:" +ename.concat("-"+dept));
+
+20.split
+Stirng arr[]=msg.split(" ");
+for(String s:arr){
+System.out.println(a);
+
+21.join
+System.out.println("KLU\n","Computer Science\n","Batch 2\n");
+
+22.toCharArray
+char c[]=company.toCharAray();
+
+for(char c1:c){
+System.out.print(c1 +"-");
+}
+
+}}
+
+------------------------------------------------------------------------
+23.repeat
+System.out.println("Repeat: "+"KLU".repeat(5));
+
+StringBuilder sb1=new StringBuilder("java is easy");
+System.out.println("Original String Builder"+sb1);
+
+//26. sb1.append("James Goasling").append("1995");
+System.out.println("After append: "+sb1);
+
+//27.reverse
+sb1.reverse();
+System.out.println("After reverse: "+sb1);
+}}
+-------------------------------------------------------------------------
+// 4 digit otp
+import java.util.Random;
+public class Main{
+public static void main(String[] args){
+random r= new random();
+int otp=r.nextInt(9000)+1000;
+System.out.print("Otp is:" +otp);
+}}
+
+----------------------------------------------------------------
+public static void main(String args[]){
+Random r=new random();
+String str1="ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+
+String password="";
+for(int i=1;i<6;i++){
+password +=str1.charAt(r.nextInt(str1.lenght()));
+}
+System.out.println("New password is: " + password);
+------------------------------------------------------------
+Strong aym[]={};
+int values[]={};
+
+Scanner sc=new Scanner(System.in);
+system.out.println("Enter No:");
+int no=sc.nextInt();
+StringBUilder 
+---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

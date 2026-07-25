@@ -1,0 +1,254 @@
+Linked list
+--------------------
+>Chain of Nodes or structure
+>A node contains data and reference of next element.
+>We need constructor in Node
+>Types - 1.singled linked list 2.Double Linked List 3. Circular Linked List
+>
+---------------------------------------------------------------------------
+Node            |
+int rollNo      |
+String name     |
+Node node=null  |
+-------------------------------------------------------------
+Array vs LinkedList
+>Array has fixed size
+> List is dynamic
+>In array can store only same data type
+>In list can store different datatype
+>Array has limited predefined operation
+>List has More predefined methods
+=============================================
+Linked List Advantages
+>Dynamic in size
+>No wastage as capacity and size is equal
+>Easy insertion and deletion as 1 link manipulation is required
+>Efficiency memory allocation
+
+Linked List Disadvantages
+>If head node is lost the linked list is lost
+>No random access is possible
+============================================
+Terms of single Linked List
+Node nnode=new Node(data);   - Create new node with data
+head = nnode;			-Set the new node as head(i.e-first node)
+cur.next=nnode;			-Link the cur node to the new node
+cur=head;			-Start from the first node
+nnode.next=head;		-Point new node to head(circular List)
+cur=cur.next;			-move to next node
+head=cur.next;			-update head to node after curnode
+prev.next=cur.next;		- Skip current node by linking prev node(Delete Node)
+-------------------------------------------------------------------------------------
+                     file name - Linkedlist1
+
+class Node{
+int rollno;
+String nam;
+Node next;
+}
+public Node(int rollno,String name){
+this.rollno=rollno;
+this.name=name;
+this.next=null;
+}
+}
+
+class LinkedList1{
+public static void main(String args[]){
+Node head;
+
+Node insertBegin(int rollno,String name,Node head){
+Node nnode=new Node(rollno,name);
+if(head==null)
+{
+return nnode;  //creating first node(head node)
+}
+Node curr=head;
+while(cur.next!=null){
+cur=cur.next;
+}
+cur.next=nnode;   //creating from second node
+return head;
+}
+
+
+public static void main(String args[]){
+LinkedList1 Ist=new LinkedList1();
+Scanner sc=new Scanner(System.in);
+do{
+System.out.println("\t\t-------Menu---------");
+System.out.println("1. Insert in beginning");
+System.out.println("2. Insert at end");
+System.out.println("3. Insert in the position");
+System.out.println("4. Display");
+System.out.println("5. Delete");
+System.out.println("6. Length");
+System.out.println("7. Reverse");
+System.out.println("8. Sum of elements");
+System.out.println("9. Search");
+System.out.println("1. Insert in beginning");
+System.out.println("1. Insert in beginning");
+System.out.println("1. Insert in beginning");
+System.out.print("Choose Option:");
+
+
+}}
+}
+}
+-----------------------------------------------------------------------
+                         Operations of Single LinkedList
+1.Insert at beginning
+2.Insert at end
+3.Insert at the position
+4.Display 
+5.Reverse
+6.Search
+7.Min/Max
+8.Sort
+9.Delete
+10.Length
+11.sum
+------------------------------------------------------------------
+import java.util.Scanner;
+
+class Node
+{
+int rollno;
+String name;
+Node next;
+public Node(int rollno, String name)
+{
+this.rollno=rollno;
+this.name=name;
+this.next=null;
+}
+}
+class LinkedList1
+{
+Node head;
+Node insertBegin(int rollno,String name, Node head)
+{
+Node nnode = new Node(rollno,name);
+nnode.next=head;
+return nnode;
+}
+Node insertEnd(int rollno,String name, Node head)
+{
+Node nnode = new Node(rollno,name);
+if(head==null)
+return nnode; // creating first node (head node)
+
+Node cur=head;
+while(cur.next!=null)
+{
+cur=cur.next;
+}
+cur.next=nnode;// creating from second node...
+return head;
+}
+Node insertPos(int rollno,String name, Node head,int pos)
+{
+Node nnode = new Node(rollno,name);
+if(head==null)
+return nnode; // creating first node (head node)
+
+if(pos==1) // use login of insertBegin
+{
+nnode.next=head;
+return nnode;
+}
+Node temp=head;
+for(int i=1;temp!=null && i<pos-1;i++)
+{
+temp=temp.next;
+}
+
+if(temp!=null)
+{
+nnode.next=temp.next;
+temp.next=nnode;
+}
+return head;
+}
+
+void display(Node head)
+{
+if(head==null)
+{
+System.out.println("No records ");
+return;
+}
+while(head!=null)
+{
+System.out.println("Roll No : " + head.rollno + " - Name : " + head.name);
+head=head.next;
+}
+}
+public static void main(String args[])
+{
+LinkedList1 lst=new LinkedList1();
+Scanner sc=new Scanner(System.in);
+do
+{
+System.out.println("\t\t\t------ Menu ------");
+System.out.println("1. Insert in beginning");
+System.out.println("2. Insert at the end");
+System.out.println("3. Insert in the position");
+System.out.println("4. Display");
+System.out.println("5. Delete");
+System.out.println("6. Length");
+System.out.println("7. Reverse");
+System.out.println("8. Sum of elements");
+System.out.println("9. Search");
+System.out.println("10. Min and Max");
+System.out.println("11. Sort ");
+System.out.println("12. Exit");
+
+System.out.print("Choose Option :");
+String n=sc.next();
+switch(n)
+{
+case "1":
+System.out.print("Enter Rollno and Name : ");
+lst.head=lst.insertBegin(sc.nextInt(),sc.next(),lst.head);
+System.out.println("Record Inserted at the beginning");
+break;
+case "2":
+System.out.print("Enter Rollno and Name : ");
+lst.head=lst.insertEnd(sc.nextInt(),sc.next(),lst.head);
+System.out.println("Record Inserted at the end");
+break;
+case "3":
+System.out.print("Enter Position : ");
+int pos=sc.nextInt();
+System.out.print("Enter Rollno and Name : ");
+lst.head=lst.insertPos(sc.nextInt(),sc.next(),lst.head,pos);
+System.out.println("Record Inserted at the Position");
+break;
+case "4":
+lst.display(lst.head);
+break;
+}
+System.out.print("Do you want to continue (Y/N) ?");
+}while(sc.next().equalsIgnoreCase("Y"));
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

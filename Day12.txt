@@ -1,0 +1,1888 @@
+static is a keyword
+-------------------------------
+4 types of storage classes in c
+
+1.auto 2.static 3.extern 4.register
+
+---------------------------------------------
+public class main{
+static+ int i=100;
+
+static void meth(){
+System.ou.tprintln("from Static method:"+I);
+}
+static
+{
+System.out.println("From Static block");
+}
+public static void mian(String args[]){
+meth();}
+-----------------------------------------------
+JVM has two types memory
+1.stack
+2.heap
+
+all commands, methods, variables, blocks first enter int o stack memory.
+
+-----------------------------------------------
+Why always static block executes first?
+
+> static method, static variable, instance method and instance variable can create reference in the heap memory.
+> A static block cant crate, since there is no any identification to a static block.
+> That's why its enter into stack memory execute and exit form stack memory.
+----------------------------------------------
+
+//Sum of natural numbers using recursion
+
+import java.util.Scanner;
+public class Main{
+Static int sum(int n){
+if(n==0){
+return 0;
+return n+sum(n-1);
+}
+
+public static void main(String args[]){
+Scanner sc=new Scanner(System.in);
+int n=sc.nextInt();     //5
+System.out.print("Sum"+sum(n));
+}
+}
+---------------------------------------------------------------------------------------------
+
+Use of recursion:-
+
+>No need use looping
+> code is primize
+> speed execution
+
+Sisadvantage:
+> Consume more memory
+----------------------------------
+Ex:- Print given number in descending order
+input: 10
+output: 10 9 8 7 6 5 4 3 2 1
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    
+        static void print(int n){
+            if(n==0){
+                return;
+            }    
+            
+            print(n-1);
+            System.out.print(n+" ");
+        }
+    
+    
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		print(n);
+
+	}
+}
+-------------------------------------------------------------------------------------
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    static int power(int base, int exp){
+        if(exp==0){
+            return 1;
+            
+        }
+        return base * power(base,exp-1);
+    }
+    
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int exp=sc.nextInt();
+        System.out.println("Power is:"+power(no,exp));
+    }
+}
+-----------------------------------------------------------------------------------------
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    //count digits using recursion
+    
+    static int count(int n){
+        if(n==0){
+            return 0;
+        }
+        return 1+count(n/10);
+    }
+    
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.println(count(n));
+    }
+}
+
+-----------------------------------------------------------------------------------------------
+******************************************************************************************************
+*******************************************************************************************************
+Question 1: Reverse a String
+
+Problem:
+Reverse the given string.
+
+Input
+
+Java
+
+Output
+
+avaJ
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a String : ");
+        String str = sc.nextLine();
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+	     System.out.print(str.charAt(i));
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 2: Check Palindrome String
+
+Problem:
+Check whether the given string is a palindrome.
+
+Input
+
+madam
+
+Output
+
+Palindrome
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a String : ");
+        String str = sc.nextLine();
+
+        String reverse = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+        	reverse+=str.charAt(i);
+        }
+
+        if (str.equals(reverse))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 3: Count Vowels and Consonants
+
+Problem:
+Count the number of vowels and consonants.
+
+Input
+
+Java
+
+Output
+
+Vowels : 2
+Consonants : 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a String : ");
+        String str = sc.nextLine().toLowerCase();
+
+        int vowels = 0;
+        int consonants = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+                vowels++;
+            }else{
+                consonants++;
+            }
+        }
+
+        System.out.println("Vowels      : " + vowels);
+        System.out.println("Consonants  : " + consonants);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 4: Count Uppercase and Lowercase Letters
+
+Input
+
+JaVa
+
+Output
+
+Uppercase : 2
+Lowercase : 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        int upper = 0;
+        int lower = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+		if(ch>='A' && ch<='Z'){
+                upper++;
+            }else{
+                lower++;
+            }
+        }
+
+        System.out.println("Uppercase : " + upper);
+        System.out.println("Lowercase : " + lower);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 5: Count Digits, Letters and Special Characters
+
+Input
+
+Java123@#
+
+Output
+
+Letters : 4
+Digits : 3
+Special Characters : 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        int letters = 0;
+        int digits = 0;
+        int special = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+            if(ch>='A'&&ch<='Z'||ch>='a'&&ch<='z'){
+                letters++;
+            }else if(ch>='0'&&ch<='9'){
+                digits++;
+            }else{
+                special++;
+            }
+        }
+
+        System.out.println("Letters : " + letters);
+        System.out.println("Digits : " + digits);
+        System.out.println("Special Characters : " + special);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 6: Toggle Case
+
+Input
+
+Java ProGram
+
+Output
+
+jAVA pROgRAM
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+		if(ch>='A' && ch<='Z'){
+                System.out.print((char)(ch+32));
+            }else if(ch>='a' && ch<='z'){
+                System.out.print((char)(ch-32));
+            }else{
+                System.out.print(ch);
+            }
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 7: Reverse the Sentence
+
+Input
+
+Java is Easy
+
+Output
+
+Easy is Java
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine();
+
+        String[] words = sentence.split(" ");
+
+        for (int i = words.length - 1; i >= 0; i--) {
+            System.out.print(words[i]+" ");
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 8: Reverse Only Each Word
+
+Input
+
+Java is Easy
+
+Output
+
+avaJ si ysaE
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine();  //java is easy
+
+        String[] words = sentence.split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+
+            for (int j = words[i].length() - 1; j >= 0; j--) {
+                char ch=words[i].charAt(j);
+                System.out.print(ch);
+            }
+
+            System.out.print(" ");
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 9: Longest and Shortest Word
+
+Input
+
+Java is very Easy Programming
+
+Output
+
+Longest Word : Programming
+Shortest Word : is
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine();
+
+        String[] words = sentence.split(" ");
+
+        String longest = words[0];
+        String shortest = words[0];
+
+        for (int i = 1; i < words.length; i++) {
+            if(longest.length()<words[i].length()){
+                longest=words[i];
+            }else if(shortest.length()>words[i].length()){
+                shortest=words[i];
+            }
+        }
+
+        System.out.println("Longest Word  : " + longest);
+        System.out.println("Shortest Word : " + shortest);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 10: Convert to Proper Case
+
+Input
+
+java is easy
+
+Output
+
+Java Is Easy
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine().toLowerCase();
+
+        String[] words = sentence.split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+
+         // Add your logic
+
+            System.out.print(proper + " ");
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 11: Check Anagram
+
+Problem:
+Check whether two strings are anagrams.
+
+Input
+
+listen
+silent
+
+Output
+
+Anagram
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter First String : ");
+        String str1 = sc.nextLine().toLowerCase();
+
+        System.out.print("Enter Second String : ");
+        String str2 = sc.nextLine().toLowerCase();
+
+        if (str1.length() != str2.length()) {
+            System.out.println("Not Anagram");
+            return;
+        }
+
+        char[] a = str1.toCharArray();
+        char[] b = str2.toCharArray();
+
+	Arrays.sort(a);
+	Arrays.sort(b);
+
+        if (Arrays.equals(a, b))
+            System.out.println("Anagram");
+        else
+            System.out.println("Not Anagram");
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 12: Remove Duplicate Characters
+
+Input
+
+programming
+
+Output
+
+progamin
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+           // Add your logic
+        }
+
+        System.out.println(result);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 13: Find Duplicate Characters
+
+Input
+
+programming
+
+Output
+
+Duplicate Characters :
+r
+g
+m
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        System.out.println("Duplicate Characters :");
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+// Add your logic
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 14: Character Frequency
+
+Input
+
+banana
+
+Output
+
+b : 1
+a : 3
+n : 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+            if (str.indexOf(ch) == i) {
+
+                int count = 0;
+
+                for (int j = 0; j < str.length(); j++) {
+
+                    if (str.charAt(j) == ch)
+                        count++;
+                }
+
+                System.out.println(ch + " : " + count);
+            }
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 15: First Non-Repeated Character
+
+Input
+
+swiss
+
+Output
+
+w
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+           // Add your logic
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 16: Count Words
+
+Input
+
+Java is easy
+
+Output
+
+Words : 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Sentence : ");
+
+        String sentence = sc.nextLine();
+
+        // Add your logic
+
+        System.out.println("Words : " + words.length);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 17: Replace Spaces with '-'
+
+Input
+
+Java is Easy
+
+Output
+
+Java-is-Easy
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        // Add your logic
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 18: Remove All Spaces
+
+Input
+
+Java is Easy
+
+Output
+
+JavaisEasy
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+       // Add your logic
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 19: Basic Email Validation
+
+Input
+
+student@gmail.com
+
+Output
+
+Valid Email
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String email = sc.nextLine();
+
+       // Add your logic
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 20: Username Generator
+
+Input
+
+Arun Kumar
+
+Output
+
+arunkumar
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String name = sc.nextLine();
+
+        String username = name.toLowerCase();
+
+        // Add your logic
+
+        System.out.println(username);
+    }
+} 
+
+--------------------------------------------------------------------------------------------
+
+Question 21: Print Each Word on a New Line
+
+Problem:
+Print every word of the sentence on a separate line.
+
+Input
+
+Java is Easy
+
+Output
+
+Java
+is
+Easy
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Sentence : ");
+        String sentence = sc.nextLine();
+
+        // Add your logic
+        for (int i = 0; i < words.length; i++) {
+            // Add your logic
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 22: Count Characters (Without Spaces)
+
+Problem:
+Count only the characters, excluding spaces.
+
+Input
+
+Java is Easy
+
+Output
+
+Characters : 10
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Sentence : ");
+        String sentence = sc.nextLine();
+
+        int count = 0;
+
+        for (int i = 0; i < sentence.length(); i++) {
+
+            // Add your logic
+        }
+
+        System.out.println("Characters : " + count);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 23: Remove All Vowels
+
+Input
+
+Java Programming
+
+Output
+
+Jv Prgrmmng
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+           // Add your logic
+        }
+
+        System.out.println(result);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 24: Remove All Digits
+
+Input
+
+Java123Easy45
+
+Output
+
+JavaEasy
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+
+          // Add your logic
+        }
+
+        System.out.println(result);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 25: Reverse Alternate Words
+
+Input
+
+Java is Very Easy
+
+Output
+
+avaJ is yreV Easy
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine();
+
+        String[] words = sentence.split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+
+            if (i % 2 == 0) {
+
+                for (int j = words[i].length() - 1; j >= 0; j--) {
+                 // Add your logic
+                }
+
+            } else {
+
+                System.out.print(words[i]);
+
+            }
+
+            System.out.print(" ");
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 26: String Compression
+
+Input
+
+aaabbcccc
+
+Output
+
+a3b2c4
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        int count = 1;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            if (// Add your logic) {
+
+                count++;
+
+            } else {
+
+                System.out.print(str.charAt(i));
+                System.out.print(count);
+
+                count = 1;
+            }
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 27: Check Rotation of Strings
+
+Input
+
+abcd
+cdab
+
+Output
+
+Rotation
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+
+        String temp = str1 + str1;
+
+    // Add your logic
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 28: Compare Two Strings Without equals()
+
+Input
+
+Java
+Java
+
+Output
+
+Equal
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+
+        if (s1.length() != s2.length()) {
+
+            System.out.println("Not Equal");
+            return;
+        }
+
+        boolean same = true;
+
+        for (int i = 0; i < s1.length(); i++) {
+
+           // Add your logic
+        }
+
+        if (same)
+            System.out.println("Equal");
+        else
+            System.out.println("Not Equal");
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 29: Print Characters One by One
+
+Input
+
+JAVA
+
+Output
+
+J
+A
+V
+A
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        for (int i = 0; i < str.length(); i++) {
+          // Add your logic
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 30: Count a Particular Character
+
+Problem:
+Count how many times a given character appears in a string.
+
+Input
+
+Programming
+m
+
+Output
+
+Count : 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter String : ");
+        String str = sc.nextLine();
+
+        System.out.print("Enter Character : ");
+        char search = sc.next().charAt(0);
+
+        int count = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+
+           // Add your logic
+        }
+
+        System.out.println("Count : " + count);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 31: Check Pangram
+
+Problem:
+Check whether the given sentence contains all 26 English alphabets.
+
+Input
+
+The quick brown fox jumps over the lazy dog
+
+Output
+
+Pangram
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Sentence : ");
+        String str = sc.nextLine().toLowerCase();
+
+        boolean pangram = true;
+
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+
+           // Add your logic
+        }
+
+        if (pangram)
+            System.out.println("Pangram");
+        else
+            System.out.println("Not Pangram");
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 32: Check Isogram
+
+Problem:
+Check whether all letters are unique.
+
+Input
+
+lamp
+
+Output
+
+Isogram
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine().toLowerCase();
+
+        boolean isogram = true;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            if (// Add your logic) {
+                isogram = false;
+                break;
+            }
+        }
+
+        if (isogram)
+            System.out.println("Isogram");
+        else
+            System.out.println("Not Isogram");
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 33: Print ASCII Value of Each Character
+
+Input
+
+JAVA
+
+Output
+
+J : 74
+A : 65
+V : 86
+A : 65
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        for (int i = 0; i < str.length(); i++) {
+
+           // Add your logic
+
+            System.out.println(ch + " : " + (int) ch);
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 34: Find First and Last Occurrence of a Character
+
+Input
+
+Programming
+g
+
+Output
+
+First Occurrence : 3
+Last Occurrence : 10
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter String : ");
+        String str = sc.nextLine();
+
+        System.out.print("Enter Character : ");
+        char ch = sc.next().charAt(0);
+
+        System.out.println("First Occurrence : " + // Add your logic);
+        System.out.println("Last Occurrence : " + // Add your logic);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 35: Remove a Specific Character
+
+Input
+
+Java Programming
+a
+
+Output
+
+Jv Progrmming
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter String : ");
+        String str = sc.nextLine();
+
+        System.out.print("Character to Remove : ");
+        char remove = sc.next().charAt(0);
+
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+
+            // Add your logic
+        }
+
+        System.out.println(result);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 36: Replace a Specific Character
+
+Input
+
+Java
+a
+o
+
+Output
+
+Jovo
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter String : ");
+        String str = sc.nextLine();
+
+        System.out.print("Character to Replace : ");
+        char oldChar = sc.next().charAt(0);
+
+        System.out.print("New Character : ");
+        char newChar = sc.next().charAt(0);
+
+        System.out.println(// Add your logic);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 37: Count Words Starting with a Vowel
+
+Input
+
+Apple is an Orange Elephant
+
+Output
+
+Count : 4
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine().toLowerCase();
+
+        String[] words = sentence.split(" ");
+
+        int count = 0;
+
+        for (int i = 0; i < words.length; i++) {
+
+            char ch = words[i].charAt(0);
+
+       // Add your logic
+        }
+
+        System.out.println("Count : " + count);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 38: Check Whether a String Contains Only Digits
+
+Input
+
+123456
+
+Output
+
+Only Digits
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        boolean digits = true;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+        // Add your logic
+        }
+
+        if (digits)
+            System.out.println("Only Digits");
+        else
+            System.out.println("Contains Other Characters");
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 39: Check Whether a String Contains Only Alphabets
+
+Input
+
+Java
+
+Output
+
+Only Alphabets
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        boolean letters = true;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char ch = str.charAt(i);
+
+           // Add your logic
+        }
+
+        if (letters)
+            System.out.println("Only Alphabets");
+        else
+            System.out.println("Contains Other Characters");
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 40: Find the Largest Word Without Using split()
+
+Input
+
+Java is Very Easy Programming
+
+Output
+
+Largest Word : Programming
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine() + " ";
+
+        String word = "";
+        String largest = "";
+
+        for (int i = 0; i < sentence.length(); i++) {
+
+            char ch = sentence.charAt(i);
+
+          // Add your logic
+
+                word = "";
+            }
+        }
+
+        System.out.println("Largest Word : " + largest);
+    }
+}
+ 
+
+--------------------------------------------------------------------------------------------
+Question 41: Count Palindrome Words in a Sentence
+
+Problem:
+Count how many words in a sentence are palindromes.
+
+Input
+
+madam java level radar
+
+Output
+
+Palindrome Words : 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Sentence : ");
+        String sentence = sc.nextLine();
+
+        String[] words = sentence.split(" ");
+
+        int count = 0;
+
+        for (int i = 0; i < words.length; i++) {
+
+            String reverse = "";
+
+            for (int j = words[i].length() - 1; j >= 0; j--) {
+                // Add your logic
+            }
+
+            if (words[i].equalsIgnoreCase(reverse)) {
+                count++;
+            }
+        }
+
+        System.out.println("Palindrome Words : " + count);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 42: Print Words with Even Length
+
+Input
+
+Java is very Easy Programming
+
+Output
+
+Java
+is
+Easy
+Programming
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine();
+
+        String[] words = sentence.split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+
+       // Add your logic
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 43: Print Words with Odd Length
+
+Input
+
+Java is very Easy Programming
+
+Output
+
+very
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine();
+
+        String[] words = sentence.split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+
+           // Add your logic
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 44: Find the Second Longest Word
+
+Input
+
+Java is very Easy Programming Language
+
+Output
+
+Second Longest Word : Language
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sentence = sc.nextLine();
+
+        String[] words = sentence.split(" ");
+
+        String longest = "";
+        String second = "";
+
+        for (int i = 0; i < words.length; i++) {
+
+            if (// Add your logic) {
+
+                second = longest;
+                longest = words[i];
+
+            } else if (// Add your logic) {
+
+                second = words[i];
+            }
+        }
+
+        System.out.println("Second Longest Word : " + second);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 45: Check Whether Two Sentences Are Equal
+
+Input
+
+Java is Easy
+Java is Easy
+
+Output
+
+Equal
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+
+        if (// Add your logic)
+            System.out.println("Equal");
+        else
+            System.out.println("Not Equal");
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 46: Reverse Alternate Characters
+
+Input
+
+PROGRAM
+
+Output
+
+P O R M
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        for (int i = 0; i < str.length(); i += 2) {
+
+            System.out.print(// Add your logic + " ");
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 47: Find the Most Frequent Character
+
+Input
+
+banana
+
+Output
+
+Most Frequent Character : a
+Count : 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        char result = ' ';
+        int max = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            int count = 0;
+
+            for (int j = 0; j < str.length(); j++) {
+
+                if (str.charAt(i) == str.charAt(j)) {
+                    count++;
+                }
+            }
+
+           // Add your logic
+        }
+
+        System.out.println("Most Frequent Character : " + result);
+        System.out.println("Count : " + max);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 48: Generate Initials from a Full Name
+
+Input
+
+Vijaya Nagarajan Kumar
+
+Output
+
+V.N.K
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String name = sc.nextLine();
+
+        String[] words = name.split(" ");
+
+        for (int i = 0; i < words.length; i++) {
+
+            System.out.print(words[i].charAt(0));
+
+     // Add your logic
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 49: Hide Email Address
+
+Input
+
+student@gmail.com
+
+Output
+
+stu*****@gmail.com
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String email = sc.nextLine();
+
+        int index = email.indexOf("@");
+
+        String hidden = email.substring(0, 3);
+
+        for (int i = 3; i < index; i++) {
+            hidden += "*";
+        }
+
+// Add your logic
+        System.out.println(hidden);
+    }
+}
+
+--------------------------------------------------------------------------------------------
+Question 50: Hide Mobile Number
+
+Input
+
+9876543210
+
+Output
+
+******3210
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String mobile = sc.nextLine();
+
+        String hidden = "";
+
+        for (int i = 0; i < mobile.length() - 4; i++) {
+            hidden += "*";
+        }
+
+        // Add your logic
+        System.out.println(hidden);
+    }
+}
+============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
