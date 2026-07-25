@@ -1,4 +1,0 @@
-List of collection elements:
-ArrayDeque, ArrayList, Arrays, Bitset, Collections, Comparable, Comparator, Deque Dictionary, Enumeration,
-Enum, Map, EnumSet, HashMap, HashSet, Hashtable, IdentityHashMap, Iterator, LinkedGashMap, LinkedHashSet, 
-LinkedList, List, ListIterator, SortedSet, Stacj, TreeMap, Treeset, Vector, WeakHashMap
